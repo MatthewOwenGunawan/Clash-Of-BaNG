@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Clash of BaNG</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #0f1b2e, #0a1322);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1c2b3f; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px; 
+        }
+
+        .logo {
+            font-size: 28px; 
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff !important; 
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500; 
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #4da6ff;
+        }
+
+        nav ul li a.active {
+            color: #4da6ff; 
+            font-weight: 500; 
+        }
+
+        main {
+            padding: 40px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .card {
+            display: flex;
+            height: 240px; 
+            position: relative; 
+            background-color: #1c2b3f; 
+            border-radius: 8px; 
+            overflow: hidden; 
+        }
+
+        .card::after {
+            content: attr(data-category);
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .card[data-category="Heroes"]::after { 
+            background-color: #FFD700; 
+            color: #000; 
+        }
+        .card[data-category="Troops"]::after { 
+            background-color: #4da6ff; 
+            color: #fff; 
+        }
+        .card[data-category="Special Art"]::after { 
+            background-color: #db2777; 
+            color: #fff; 
+        }
+
+        .card-image {
+            width: 180px; 
+            flex-shrink: 0;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center; 
+            display: block;
+        }
+
+        .card-content {
+            background-color: #1c2b3f; 
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: #b0b5c4;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+
+            .card {
+                flex-direction: column;
+                height: auto; 
+            }
+            
+            .card-image {
+                width: 100%; 
+                height: 220px; 
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Clash of BaNG</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="troops.html">Troops</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">Gallery</h1>
+
+        <div class="gallery-grid">
+            
+            <div class="card" data-category="Heroes">
+                <div class="card-image">
+                    <img src="Asset/dragon art.jpg" alt="Dragon Knight">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Dragon Knight's Resolve</h3>
+                    <p class="card-desc">Description: An exclusive illustration featuring the Dragon Rider and his formidable mount. His dark armor and imposing posture depict absolute strength on the frontlines of battle.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Troops">
+                <div class="card-image">
+                    <img src="Asset/horse archer.jpg" alt="Horse Archer">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Swift Strike of the Steppe</h3>
+                    <p class="card-desc">Description: Capturing an epic moment of the Horse Archer in the heat of battle. This artwork highlights the deadly speed and accuracy of Clash of BaNG's elite cavalry.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Heroes">
+                <div class="card-image">
+                    <img src="Asset/undead king.jpg" alt="Skeleton King">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Awakening of the Skeleton King</h3>
+                    <p class="card-desc">Description: A dark portrait of the undead ruler. His rusted crown and glowing red aura emphasize the terror and dark magic he wields to raise his army.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Troops">
+                <div class="card-image">
+                    <img src="Asset/swordmans art.jpg" alt="Vanguard Swordsman">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Vanguard Swordsman</h3>
+                    <p class="card-desc">Description: A realistic depiction of a veteran Swordsman. His battle-scarred armor tells a story of boundless courage from the tip of the kingdom's defense line.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Heroes">
+                <div class="card-image">
+                    <img src="Asset/shadow guardian.jpg" alt="Shadow Guardian">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Whisper of the Shadow</h3>
+                    <p class="card-desc">Description: Shrouded in mysterious fog, the Shadow Guardian emerges from the darkness. This concept art reveals the most enigmatic and untouchable entity in the arena.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Troops">
+                <div class="card-image">
+                    <img src="Asset/archer art.jpg" alt="Master Archer">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Master Archer's Focus</h3>
+                    <p class="card-desc">Description: The sharp gaze of the Archer, ready to loose a deadly arrow. This piece highlights the crucial role of ranged units striking with unerring precision.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Heroes">
+                <div class="card-image">
+                    <img src="Asset/giant.jpg" alt="Brute">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Might of the Brute</h3>
+                    <p class="card-desc">Description: A display of raw, brutal physical power. The giant posture of the Brute in this artwork represents the massive destructive force capable of flattening enemy fortresses barehanded.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Troops">
+                <div class="card-image">
+                    <img src="Asset/mage art.jpg" alt="Grand Mage">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Grand Mage's Spell</h3>
+                    <p class="card-desc">Description: A mesmerizing illustration of a Mage casting a spell. The intricate details of his blue robes and magical staff capture both the beauty and danger of arcane power.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Special Art">
+                <div class="card-image">
+                    <img src="Asset/The Vanguard Blade.jpg" alt="The Vanguard Blade">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Vanguard Blade</h3>
+                    <p class="card-desc">Description: A breathtaking anime-style artwork of the Swordsman. Wielding a glowing neon blade, this piece captures his swift and deadly strikes that easily cut through the darkness of the battlefield.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Special Art">
+                <div class="card-image">
+                    <img src="Asset/neon_sorceress.jpg" alt="The Neon Sorceress">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: The Neon Sorceress</h3>
+                    <p class="card-desc">Description: A charming anime-style Mage dressed in an elegant white and green outfit. She channels bright, nature-infused magic that brings both healing and destruction to the battlefield.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Special Art">
+                <div class="card-image">
+                    <img src="Asset/Crimson Dragon Tamer.jpg" alt="Crimson Dragon Tamer">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Crimson Dragon Tamer</h3>
+                    <p class="card-desc">Description: An epic anime-style artwork featuring a formidable half-dragon warrior. With his striking crimson gaze and draconic features, he embodies the raw, untamed power of a legendary dragon in human form.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="Special Art">
+                <div class="card-image">
+                    <img src="Asset/Lunar Bowmaster.jpg" alt="Lunar Bowmaster">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Title: Lunar Bowmaster</h3>
+                    <p class="card-desc">Description: A stunning anime-inspired illustration of the Master Archer. With her mystical energy bow fully drawn, she looks onto her targets from afar and strikes with unparalleled, glowing precision.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

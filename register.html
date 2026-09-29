@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Clash of BaNG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Clash of BaNG</div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="troops.html">Troops</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="register.html" class="active">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="register-container">
+    <div class="register-left">
+        <div class="logo-box">
+            <img src="Asset/Clash of Bang.png" alt="Logo">
+        </div>
+    </div>
+    <div class="register-right">
+        <h1>Register here!</h1>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <div class="gender-section">
+                <span class="gender-title">Gender</span>
+                <div class="gender-options">
+                    <label>Male <input type="radio" name="gender" id="male" value="Male" class="custom-box"></label>
+                    <label>Female <input type="radio" name="gender" id="female" value="Female" class="custom-box"></label>
+                </div>
+            </div>
+
+            <input type="number" id="age" placeholder="Age">
+
+            <select id="troops">
+                <option value="" disabled selected hidden>Favorite Troops</option>
+                <option value="Dragon Rider">Dragon Rider</option>
+                <option value="Horse Archer">Horse Archer</option>
+                <option value="Skeleton King">Skeleton King</option>
+                <option value="Swordsman">Swordsman</option>
+                <option value="Shadow Guardian">Shadow Guardian</option>
+                <option value="Archer">Archer</option>
+                <option value="Brute">Brute</option>
+                <option value="Mage">Mage</option>
+            </select>
+
+            <input type="text" id="reason" placeholder="Reason to join">
+
+            <div class="terms-section">
+                <input type="checkbox" id="terms" class="custom-box">
+                <label for="terms">I agree to the Terms & Conditions and Privacy Policy</label>
+            </div>
+
+            <p id="error-message" style="color: #ff4d4d; font-size: 13px; text-align: center; margin-top: 10px;"></p>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 20px; background: #0a1322; color: #d1d5db; font-size: 12px;">
+    &copy; 2026 Clash of BaNG. All rights reserved.
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
